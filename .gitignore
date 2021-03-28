@@ -13,6 +13,9 @@
 /.idea
 .project
 .classpath
+.firebase
+.firebase/hosting.*
+.firebaserc
 .c9/
 *.launch
 .settings/
