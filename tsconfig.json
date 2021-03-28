@@ -16,5 +16,11 @@
       "es2016",
       "dom"
     ]
-  }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  },
+   "esModuleInterop": true,
+   "allowSyntheticDefaultImports": true
 }

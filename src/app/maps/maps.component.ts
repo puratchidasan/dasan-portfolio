@@ -1,4 +1,5 @@
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
+//import tt from '@tomtom-international/web-sdk-maps';
 
 declare let L;
 declare let tomtom: any;
@@ -27,5 +28,6 @@ export class MapsComponent implements OnInit {
           zoom: 15,
           source : 'vector'
         });
+		
     }
   }
