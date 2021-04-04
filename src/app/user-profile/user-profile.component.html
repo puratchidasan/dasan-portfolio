@@ -20,6 +20,13 @@
                                     <input matInput placeholder="Username">
                                   </mat-form-field>
                               </div>
+                              
+                              <button mat-raised-button (click)="picker.open()">Open</button>
+                              <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [matDatepicker]="picker">
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
                                     <input matInput placeholder="Email address" type="email">
