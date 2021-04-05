@@ -2,6 +2,9 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { ElementsService } from './table-list.service';
 
 @Component({
   selector: 'app-table-list',
@@ -11,16 +14,28 @@ import {MatSort} from '@angular/material/sort';
 export class TableListComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSourceElement = new MatTableDataSource<Element>();
+  elementsService = new ElementsService(this.httpClient);
 
+  
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   ngAfterViewInit() {
+    this.elementsService.getElements().subscribe((data: Element[]) => {
+      this.dataSourceElement.data = data;
+    });
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    
+    this.dataSourceElement.paginator = this.paginator;
+    this.dataSourceElement.sort = this.sort;
   }
 
-  data: Array<any>;constructor(){
+  data: Array<any>;
+  elementData: Element[];
+  
+  constructor(private httpClient: HttpClient){
     this.data = [
         { id: '1', Name: 'Dasan', country: 'India', city: 'Bengaluru', salary: '35000' },
         { id: '2', Name: 'Dasan', country: 'India', city: 'Bengaluru', salary: '35000' },
@@ -29,8 +44,15 @@ export class TableListComponent implements AfterViewInit {
         { id: '5', Name: 'Dasan', country: 'India', city: 'Bengaluru', salary: '35000' },
         { id: '6', Name: 'Dasan', country: 'India', city: 'Bengaluru', salary: '35000' }
     ];
+    
 }
 
+}
+export interface Element {
+  name: string;
+  weight: number;
+  symbol: string;
+  position: string;
 }
 export interface PeriodicElement {
   name: string;

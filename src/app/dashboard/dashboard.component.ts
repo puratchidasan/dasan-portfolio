@@ -69,9 +69,9 @@ export class DashboardComponent implements OnInit {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       const dataDailySalesChart: any = {
-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+          labels: ['2006', '2007', '2008', '2009', '2012', '2016', '2018','2020','2021'],
           series: [
-              [12, 17, 7, 17, 23, 18, 38]
+              [2006, 2007, 2008, 2009, 2012, 2016, 2018, 2020, 2021]
           ]
       };
 
@@ -79,8 +79,8 @@ export class DashboardComponent implements OnInit {
           lineSmooth: Chartist.Interpolation.cardinal({
               tension: 0
           }),
-          low: 0,
-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          low: 2005,
+          high: 2025, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
       }
 
