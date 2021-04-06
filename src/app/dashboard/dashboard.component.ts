@@ -69,9 +69,9 @@ export class DashboardComponent implements OnInit {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       const dataDailySalesChart: any = {
-          labels: ['2006', '2007', '2008', '2009', '2012', '2016', '2018','2020','2021'],
+          labels: ['StepOnline(IN)', 'Aprameyah(IN)', 'KTwo(IN)', 'IBM(IN)', 'HPE(IN)', 'Tavant(IN)','BNP AM(BE)','SWIFT(BE)'],
           series: [
-              [2006, 2007, 2008, 2009, 2012, 2016, 2018, 2020, 2021]
+              [2007, 2008, 2009, 2012, 2016, 2018, 2020, 2021]
           ]
       };
 
@@ -85,7 +85,6 @@ export class DashboardComponent implements OnInit {
       }
 
       var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
       this.startAnimationForLineChart(dailySalesChart);
 
 
@@ -108,7 +107,7 @@ export class DashboardComponent implements OnInit {
       }
 
       var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
+      
       // start animation for the Completed Tasks Chart - Line Chart
       this.startAnimationForLineChart(completedTasksChart);
 
@@ -117,19 +116,20 @@ export class DashboardComponent implements OnInit {
       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
 
       var datawebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+        labels: ['Java', 'Springboot', 'Jenkins', 'DevOps', 'REST APIs', 'Automation', 'JUnit', 'GIT', 'CICD', 'Artifactory', 'Sonarqube', 'Ansible'],
         series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+          [90, 70, 80, 78, 65, 64, 70, 80, 68, 61, 76, 49]
 
         ]
       };
       var optionswebsiteViewsChart = {
           axisX: {
-              showGrid: false
+              showGrid: true
           },
           low: 0,
-          high: 1000,
+          high: 100,
           chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
+          
       };
       var responsiveOptions: any[] = [
         ['screen and (max-width: 640px)', {
@@ -142,7 +142,7 @@ export class DashboardComponent implements OnInit {
         }]
       ];
       var websiteViewsChart = new Chartist.Bar('#websiteViewsChart', datawebsiteViewsChart, optionswebsiteViewsChart, responsiveOptions);
-
+      
       //start animation for the Emails Subscription Chart
       this.startAnimationForBarChart(websiteViewsChart);
   }
