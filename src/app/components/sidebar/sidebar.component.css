@@ -1,0 +1,26 @@
+  .clock-container{
+    font-size:20px;
+    /*line-height:25px;*/
+    color:rgb(33,150,243);
+    height:100%;
+    font-weight: 400;  
+  }
+  .clock, .clock2 {
+    top:5%;
+    /*background-color: #ebeff3;*/
+    width:50%;
+    height:100%;
+    margin:5px auto;
+    padding:10px;
+  }
+  .clock div, .clock2 div {
+    display:inline-block;
+    /*background-color: #f7f7f7;*/
+    width:25%;
+    height: 100%;
+    text-align: center;
+  }
+  .time{
+    width:100% !important;
+  }
+  

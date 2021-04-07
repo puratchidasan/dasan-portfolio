@@ -3,15 +3,18 @@
         <!--<div class="logo-img">
             <img src="/assets/img/angular2-logo-red.png"/>
         </div>-->
-        My Portfolio
+        My Portfolio        
     </a>
+    <div class="clock-container clock2">
+        <div class="time">{{date}}</div>
+  </div>
 </div>
 <div class="sidebar-wrapper">
   <div *ngIf="isMobileMenu()">
     <form class="navbar-form">
       <span class="bmd-form-group">
         <div class="input-group no-border">
-          <input type="text" value="" class="form-control" placeholder="Search...">
+           <input type="text" value="" class="form-control" placeholder="Search...">
           <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
             <i class="material-icons">search</i>
             <div class="ripple-container"></div>
