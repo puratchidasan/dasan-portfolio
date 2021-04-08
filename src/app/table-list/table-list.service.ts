@@ -8,7 +8,8 @@ export class ElementsService {
 constructor(private http: HttpClient) { }
 
   getElements(): Observable<Element[]> {
-    return this.http.get<Element[]>('http://localhost:8083/student-service/elements');
+    return this.http.get<Element[]>('https://student-services.azurewebsites.net/elements');
+    //return this.http.get<Element[]>('http://localhost:8083/student-service/elements');
   }
 }
 export interface Element {

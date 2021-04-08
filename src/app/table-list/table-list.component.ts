@@ -24,12 +24,13 @@ export class TableListComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.elementsService.getElements().subscribe((data: Element[]) => {
       this.dataSourceElement.data = data;
+      //console.log(JSON.stringify(data));
     });
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    //this.dataSource.paginator = this.paginator;
+    //this.dataSource.sort = this.sort;
     
-    //this.dataSourceElement.paginator = this.paginator;
-    //this.dataSourceElement.sort = this.sort;
+    this.dataSourceElement.paginator = this.paginator;
+    this.dataSourceElement.sort = this.sort;
   }
 
   data: Array<any>;
