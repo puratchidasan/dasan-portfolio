@@ -6,7 +6,7 @@
                   <div class="card-header card-header-danger">
                       <h4 class="card-title">Periodic table</h4>
                       <p class="card-category"><a target="_blank" href="https://ptable.com/#Properties">Follow to the link to view all elements</a></p>
-                  </div>
+                  </div>                          
                   <div class="mat-elevation-z8">
                     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
@@ -37,8 +37,44 @@
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                       </table>
-                    <mat-paginator [pageSizeOptions]="[7, 15, 20]" showFirstLastButtons></mat-paginator>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
                   </div>
+                  <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Springboot REST APIs</h4>
+                        <p class="card-category"><a target="_blank" href="http://140.238.89.162:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config">CRUD API 1.0.0 </a></p>
+                    </div>                       
+                    <div class="mat-elevation-z8">
+                        <table mat-table [dataSource]="dataSourceStudent" matSort class="mat-elevation-z8">
+                        <!-- Name Column -->
+                            <ng-container matColumnDef="rollNo">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Roll No. </th>
+                              <td mat-cell *matCellDef="let student"> {{student.rollNo}} </td>
+                            </ng-container>
+                          
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="firstName">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                              <td mat-cell *matCellDef="let student"> {{student.firstName}} </td>
+                            </ng-container>
+                          
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="lastName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                              <td mat-cell *matCellDef="let student"> {{student.lastName}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="marks">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Marks </th>
+                                <td mat-cell *matCellDef="let student"> {{student.marks}} </td>
+                              </ng-container>
+                          
+                            <tr mat-header-row *matHeaderRowDef="displayedStudentColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedStudentColumns;"></tr>
+                          </table>                          
+                        <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+                      </div>
                 
                  <!-- <div class="card-body">
                       <div class="table-responsive">

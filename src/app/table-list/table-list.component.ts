@@ -13,24 +13,40 @@ import { ElementsService } from './table-list.service';
 })
 export class TableListComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedStudentColumns: string[] = ['rollNo', 'firstName', 'lastName', 'marks'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   dataSourceElement = new MatTableDataSource<Element>();
+  dataSourceStudent = new MatTableDataSource<Student>();
+
   elementsService = new ElementsService(this.httpClient);
 
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  @ViewChild(MatPaginator) studentPaginator: MatPaginator;
+  @ViewChild(MatSort) studentSort: MatSort;
+
   ngAfterViewInit() {
-    this.elementsService.getElements().subscribe((data: Element[]) => {
-      this.dataSourceElement.data = data;
+    //this.elementsService.getElements().subscribe((data: Element[]) => {
+    //  this.dataSourceElement.data = data;
       //console.log(JSON.stringify(data));
+    //});
+    this.elementsService.getStudents().subscribe((data: Student[]) => {
+      this.dataSourceStudent.data = data;
+      //console.log(JSON.stringify(data));
+    
     });
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     
     //this.dataSourceElement.paginator = this.paginator;
     //this.dataSourceElement.sort = this.sort;
+
+    //this.dataSourceStudent.paginator = this.studentPaginator;
+    //this.dataSourceStudent.sort = this.studentSort;
+
+    
   }
 
   data: Array<any>;
@@ -60,6 +76,14 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
+}
+
+export interface Student {
+  id:        number;
+  rollNo:    number;
+  firstName: string;
+  lastName:  string;
+  marks:     number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
