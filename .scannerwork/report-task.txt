@@ -1,0 +1,7 @@
+organization=puratchidasan
+projectKey=dasan-portfolio
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.20278
+dashboardUrl=https://sonarcloud.io/dashboard?id=dasan-portfolio
+ceTaskId=AXmWdLJreP-nodV5zq-Z
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXmWdLJreP-nodV5zq-Z

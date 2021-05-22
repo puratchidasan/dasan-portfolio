@@ -10,8 +10,18 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-sonarqube-unit-reporter'),
+      require('@angular/cli/plugins/karma')
     ],
+    sonarQubeUnitReporter: {
+      sonarQubeVersion: 'LATEST',
+      outputFile: 'reports/ut_report.xml',
+      overrideTestDescription: true,
+      testPaths: ['./src/app'],
+      testFilePattern: '.spec.ts',
+      useBrowserName: false
+    },
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
@@ -19,7 +29,8 @@ module.exports = function (config) {
       
     ],
     preprocessors: {
-      
+      'src/**/*.js':   ['coverage'],
+      'test/**/*.js':   ['coverage']
     },
     mime: {
       'text/x-typescript': ['ts','tsx']
@@ -32,7 +43,7 @@ module.exports = function (config) {
       environment: 'dev'
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
-              ? ['progress', 'coverage-istanbul']
+              ? ['progress', 'coverage-istanbul', 'sonarqubeUnit']
               : ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
