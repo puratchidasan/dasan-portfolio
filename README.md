@@ -1,3 +1,10 @@
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=dasan-portfolio)](https://sonarcloud.io/dashboard?id=dasan-portfolio)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dasan-portfolio&metric=alert_status)](https://sonarcloud.io/dashboard?id=dasan-portfolio)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=dasan-portfolio&metric=coverage)](https://sonarcloud.io/dashboard?id=dasan-portfolio)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=dasan-portfolio&metric=ncloc)](https://sonarcloud.io/dashboard?id=dasan-portfolio)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=dasan-portfolio&metric=sqale_index)](https://sonarcloud.io/dashboard?id=dasan-portfolio)
+
+
 # [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
 
 ![Product Gif](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/material-dashboard-angular.gif)
