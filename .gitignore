@@ -50,3 +50,5 @@ tasks.json
 .scannerwork/.sonar_lock
 .scannerwork/scanner-report/analysis.log
 .scannerwork/.sonar_lock
+.scannerwork/report-task.txt
+.gitignore

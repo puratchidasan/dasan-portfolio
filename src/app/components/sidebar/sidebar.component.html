@@ -1,8 +1,5 @@
 <div class="logo">
     <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/puratchidasan/" class="simple-text">
-        <!--<div class="logo-img">
-            <img src="/assets/img/angular2-logo-red.png"/>
-        </div>-->
         My Portfolio        
     </a>
     <div class="clock-container clock2">
@@ -16,7 +13,7 @@
         <div class="input-group no-border">
            <input type="text" value="" class="form-control" placeholder="Search...">
           <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
-            <i class="material-icons">search</i>
+            <em class="material-icons">search</em>
             <div class="ripple-container"></div>
           </button>
         </div>
@@ -25,7 +22,7 @@
     <ul class="nav navbar-nav nav-mobile-menu">
         <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">
-                <i class="material-icons">dashboard</i>
+                <em class="material-icons">dashboard</em>
                 <p>
                     <span class="d-lg-none d-md-block">Stats</span>
                 </p>
@@ -33,7 +30,7 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">notifications</i>
+                <em class="material-icons">notifications</em>
                 <span class="notification">5</span>
                 <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
@@ -49,7 +46,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">
-                <i class="material-icons">person</i>
+                <em class="material-icons">person</em>
                 <p>
                     <span class="d-lg-none d-md-block">Account</span>
                 </p>
@@ -60,7 +57,7 @@
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">
-                <i class="material-icons">{{menuItem.icon}}</i>
+                <em class="material-icons">{{menuItem.icon}}</em>
                 <p>{{menuItem.title}}</p>
             </a>
         </li>
