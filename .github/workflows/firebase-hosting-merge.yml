@@ -14,7 +14,7 @@ jobs:
         with:
             node-version: '10.x'
       - run: npm --legacy-peer-deps install
-      - run: npm run build --only=dev
+      - run: npm run build Prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
